@@ -1,0 +1,40 @@
+
+<div class="container">
+    
+<div class="card mt-5 col-md-4 offset-4" id="new" style="width: 18rem;">
+   
+    <div class="card-body">
+      <b class="card-text mt-3">Id: {{ data.id }}</b><br>
+      <b class="card-text mt-3">Name: {{ data.name }}</b><br>
+      <b class="card-text mt-3">Age: {{ data.age }}</b><br>
+      <b class="card-text mt-3">Gender: {{ data.gender }}</b>
+      
+    </div>
+  </div>
+</div>
+<pre></pre>
+<pre></pre>
+<div class="container">
+  <div class="card col-md-6 offset-3">
+    <div class="card-body">
+      <form focusInvalidInput [formGroup]="form" (ngSubmit)="submit()">
+        <div class="form-group mt-3">
+          <label>Name</label>
+          <input type="text" class="form-control" name="u_name"  formControlName="name" [class.is-invalid]="name?.invalid && submitted" [(ngModel)]="user.name">
+        </div>
+        <div class="form-group mt-3">
+          <label>Age</label>
+          <input type="text" class="form-control" name="age" formControlName="age" [class.is-invalid]="age?.invalid && submitted" [(ngModel)]="user.age">
+        </div>
+        <div class="form-group mt-3">
+          <label>Gender</label>
+          <input type="text" class="form-control" name="gender" formControlName="gender" [class.is-invalid]="gender?.invalid && submitted" [(ngModel)]="user.gender" >
+        </div>
+        <div>
+          <button class="btn btn-primary mt-3">Submit</button>
+        </div>
+       </form>
+    </div>
+  </div>
+   
+</div>
